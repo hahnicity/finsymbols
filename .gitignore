@@ -1,6 +1,7 @@
 *.py[co]
 *.sw[op]
 *.egg-info/
+venv/
 
 # Cached files
 SP500.html

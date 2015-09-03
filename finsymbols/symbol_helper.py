@@ -4,6 +4,7 @@ except ImportError:  # python3
     import urllib.request as urllib
 import os
 import datetime
+import re
 
 import finsymbols
 
@@ -11,7 +12,7 @@ import finsymbols
 def get_symbol_list(symbol_data):
     symbol_list = list()
     symbol_data = symbol_data.replace('"', "")
-    symbol_data = symbol_data.split("\r\n")
+    symbol_data = re.split("\r?\n", symbol_data)
     symbol_data = list(map(lambda x: x.split(","), symbol_data))
     # We need to cut off the first row because it is the header and the last
     # row because it is a null string
